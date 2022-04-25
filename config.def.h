@@ -6,6 +6,7 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int colorfultag    = 1;  /* 0 means use SchemeSel for selected tag */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const char *fonts[]          = { "JetBrains Mono Medium:size=10" };
@@ -15,14 +16,31 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+
+#include "themes/dracula.h"
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm]	   = { gray3,	black, gray2 },
+	[SchemeSel]		   = { gray4,	blue,	blue },
+	[SchemeTag]        = { gray3,	black,	black},
+    [SchemeTag1]       = { red,		black,	black },
+	[SchemeTag2]       = { orange,	black,	black },
+    [SchemeTag3]       = { yellow,	black,  black },
+    [SchemeTag4]       = { blue,	black,  black },
+    [SchemeTag5]       = { pink,	black,  black },
+	[SchemeTag6]       = { red,     black,  black },
+	[SchemeTag7]       = { orange,  black,  black },
+	[SchemeTag8]       = { yellow,  black,  black },
+	[SchemeTag9]       = { blue,    black,  black },
+	[SchemeLayout]     = { white,   black,  black },
 };
 
 /* tagging */
 static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
+                                  SchemeTag4, SchemeTag5, SchemeTag6,
+                                  SchemeTag7, SchemeTag8, SchemeTag9 };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
@@ -65,7 +83,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", gray2, "-nf", white, "-sb", blue, "-sf", gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *musiccmd[] = { "spotify", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
