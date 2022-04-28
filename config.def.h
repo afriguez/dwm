@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int colorfultag    = 1;  /* 0 means use SchemeSel for selected tag */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:Medium:size=15" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:Medium:size=15" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:Italic:size=15";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
