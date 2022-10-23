@@ -87,6 +87,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *musiccmd[] = { "spotify", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *switchkbdcmd[] = { "switch_kbd_locale", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,6 +95,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = musiccmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
+	{ MODKEY,						XK_u,	   spawn,          {.v = switchkbdcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
