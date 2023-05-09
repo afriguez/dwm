@@ -11,8 +11,8 @@ static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 5;       /* horizontal padding of bar */
 static const int horizpadbar        = 0;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 4;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:Medium:size=15" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:Italic:size=15";
+static const char *fonts[]          = { "JetBrainsMono NFM SemiBold:size=15" };
+static const char dmenufont[]       = "JetBrainsMono NFM:Italic:size=15";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
