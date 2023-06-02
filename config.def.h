@@ -23,14 +23,14 @@ static const char col_cyan[]        = "#005577";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm]	   = { gray3,	black, gray2 },
-	[SchemeSel]		   = { gray4,	blue,	blue },
-	[SchemeTag]        = { gray3,	black,	black},
-    [SchemeTag1]       = { red,		black,	black },
-	[SchemeTag2]       = { orange,	black,	black },
-    [SchemeTag3]       = { yellow,	black,  black },
-    [SchemeTag4]       = { blue,	black,  black },
-    [SchemeTag5]       = { pink,	black,  black },
+	[SchemeNorm]       = { gray3,   black, gray2 },
+	[SchemeSel]        = { gray4,   blue,	blue },
+	[SchemeTag]        = { gray3,   black,	black},
+    [SchemeTag1]       = { red,     black,	black },
+	[SchemeTag2]       = { orange,  black,	black },
+    [SchemeTag3]       = { yellow,  black,  black },
+    [SchemeTag4]       = { blue,    black,  black },
+    [SchemeTag5]       = { pink,    black,  black },
 	[SchemeTag6]       = { red,     black,  black },
 	[SchemeTag7]       = { orange,  black,  black },
 	[SchemeTag8]       = { yellow,  black,  black },
@@ -91,6 +91,7 @@ static const char *musiccmd[] = { "spotify", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *switchkbdcmd[] = { "switch_kbd_locale", NULL };
 static const char *wper[] = { "wper", NULL };
+static const char *session[] = { "kitty", "session", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,8 +99,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = musiccmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
-	{ MODKEY,						XK_u,	   spawn,          {.v = switchkbdcmd } },
-	{ MODKEY,						XK_w,	   spawn,          {.v = wper } },
+	{ MODKEY,                       XK_u,      spawn,          {.v = switchkbdcmd } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = wper } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = session } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
