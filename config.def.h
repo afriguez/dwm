@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int usealtbar          = 0;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
@@ -96,10 +96,12 @@ static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *switchkbdcmd[] = { "switch_kbd_locale", NULL };
 static const char *wper[] = { "wper", NULL };
 static const char *session[] = { "kitty", "session", NULL };
+static const char *rofi[] = { "rofi", "-show", "drun", "-icon-theme", "Papirus", "-show-icons", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = musiccmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
